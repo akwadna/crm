@@ -39,6 +39,46 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
+        /*for fresh installing mysql you will get stream_socket_sendto(): Connection refused
+        if you want to see that error uncomment dd() function
+        that error because of:
+        The problem was that the upload_max_filesize in the php.ini of the php-fpm,
+         it was only 2M, after increasing to 100M it works. So you must change this value in:
+        /etc/php/7.2/fpm/php.ini
+        /etc/php/7.2/cli/php.ini
+        upload_max_filesize=100M
+        */
+        //dd($request->client_idPicFront);
+        if($request->hasFile('client_idPicFront')){
+            //Get File Name With Extension
+            $fileNameWithExt=$request->file('client_idPicFront')->getClientOriginalName();
+            //Get File Nme Without Extension
+            $fileName=pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+            //Get Extension
+            $extension=$request->file('client_idPicFront')->getClientOriginalExtension();
+            //Make new File name
+            $client_idPicFront=$fileName."_".time().".".$extension;
+            //upload Image
+            $path=$request->file('client_idPicFront')->storeAs('public/clients/NidPics',$client_idPicFront);
+        }
+        else{
+            $client_idPicFront="no-image.png";
+        }
+        if($request->hasFile('client_idPicBack')){
+            //Get File Name With Extension
+            $fileNameWithExt=$request->file('client_idPicBack')->getClientOriginalName();
+            //Get File Nme Without Extension
+            $fileName=pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+            //Get Extension
+            $extension=$request->file('client_idPicBack')->getClientOriginalExtension();
+            //Make new File name
+            $client_idPicBack=$fileName."_".time().".".$extension;
+            //upload Image
+            $path=$request->file('client_idPicBack')->storeAs('public/clients/NidPics',$client_idPicBack);
+        }
+        else{
+            $client_idPicBack="no-image.png";
+        }
 
         $client= new Client();
         $client->client_name =Request('client_name');
@@ -49,8 +89,8 @@ class ClientsController extends Controller
         $client->client_email =Request('client_email');
         $client->client_birthDate =Request('client_birthDate');
         $client->client_bankAccountNumber =Request('client_bankAccountNumber');
-        $client->client_idPicFront =Request('client_idPicFront');
-        $client->client_idPicBack =Request('client_idPicBack');
+        $client->client_idPicFront =$client_idPicFront;
+        $client->client_idPicBack =$client_idPicBack;
         $client->client_address =Request('client_address');
         $client->client_notes =Request('client_notes');
         $client->user_id=auth()->user()->id;
@@ -94,6 +134,36 @@ class ClientsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if($request->hasFile('client_idPicFront')){
+            //Get File Name With Extension
+            $fileNameWithExt=$request->file('client_idPicFront')->getClientOriginalName();
+            //Get File Nme Without Extension
+            $fileName=pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+            //Get Extension
+            $extension=$request->file('client_idPicFront')->getClientOriginalExtension();
+            //Make new File name
+            $client_idPicFront=$fileName."_".time().".".$extension;
+            //upload Image
+            $path=$request->file('client_idPicFront')->storeAs('public/clients/NidPics',$client_idPicFront);
+        }
+        else{
+            $client_idPicFront="no-image.png";
+        }
+        if($request->hasFile('client_idPicBack')){
+            //Get File Name With Extension
+            $fileNameWithExt=$request->file('client_idPicBack')->getClientOriginalName();
+            //Get File Nme Without Extension
+            $fileName=pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+            //Get Extension
+            $extension=$request->file('client_idPicBack')->getClientOriginalExtension();
+            //Make new File name
+            $client_idPicBack=$fileName."_".time().".".$extension;
+            //upload Image
+            $path=$request->file('client_idPicBack')->storeAs('public/clients/NidPics',$client_idPicBack);
+        }
+        else{
+            $client_idPicBack="no-image.png";
+        }
         $client=Client::findOrFail($id);
         $client->client_name =Request('client_name');
         $client->client_nid =Request('client_nid');
@@ -103,8 +173,8 @@ class ClientsController extends Controller
         $client->client_email =Request('client_email');
         $client->client_birthDate =Request('client_birthDate');
         $client->client_bankAccountNumber =Request('client_bankAccountNumber');
-        $client->client_idPicFront =Request('client_idPicFront');
-        $client->client_idPicBack =Request('client_idPicBack');
+        $client->client_idPicFront =$client_idPicFront;
+        $client->client_idPicBack =$client_idPicBack;
         $client->client_address =Request('client_address');
         $client->client_notes =Request('client_notes');
         $client->user_id=auth()->user()->id;

@@ -53,34 +53,31 @@
                                         <input type="text" name="client_bankAccountNumber" class="form-control" value="{{$client->client_bankAccountNumber}}">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                            <div class="fileinput-new thumbnail img-raised">
-                                                <img src="" alt="صورة البطاقة من الامام">
-                                            </div>
-                                            <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
-                                            <div>
-                                        <span class="btn btn-raised btn-round btn-default btn-file">
-                                            <span class="fileinput-new">Select image</span>
-                                            <span class="fileinput-exists">Change</span>
-                                            <input type="file" name="client_idPicFront" placeholder="صورة البطاقة من الامام" />
-                                         </span>
-                                                <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                        <div><img src="{{asset('storage')}}/clients/NidPics/{{$client->client_idPicFront}}" width="460px" height="200px"/></div>
+
+                                        <div class="form-group form-file-upload form-file-multiple">
+                                            <input type="file" multiple="" class="inputFileHidden" name="client_idPicFront">
+                                            <div class="input-group">
+                                                <input type="text"  class="form-control inputFileVisible" placeholder="صورة البطاقة من الامام">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-fab btn-round btn-primary">
+                                                        <i class="material-icons">attach_file</i>
+                                                    </button>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                            <div class="fileinput-new thumbnail img-raised">
-                                                <img src="" alt="صورة البطاقة من الخلف">
-                                            </div>
-                                            <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
-                                            <div>
-                                    <span class="btn btn-raised btn-round btn-default btn-file">
-                                        <span class="fileinput-new">Select image</span>
-                                        <span class="fileinput-exists">Change</span>
-                                        <input type="file" name="client_idPicBack" placeholder="صورة البطاقة من الخلف"/>
-                                    </span>
-                                                <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                        <div><img src="{{asset('storage')}}/clients/NidPics/{{$client->client_idPicBack}}" width="460px" height="200px"/></div>
+                                        <div class="form-group form-file-upload form-file-multiple">
+                                            <input type="file" multiple="" class="inputFileHidden" name="client_idPicBack">
+                                            <div class="input-group">
+                                                <input type="text"  class="form-control inputFileVisible" placeholder="صورة البطاقة من الخلف">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-fab btn-round btn-primary">
+                                                        <i class="material-icons">attach_file</i>
+                                                    </button>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>

@@ -46,7 +46,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th>صورة البطاقة من الامام</th>
-                                                    <td>{{$client->client_birthDate}}</td>
+                                                    <td><img src="{{asset('storage')}}/clients/NidPics/{{$client->client_idPicFront}}" width="200px" height="100px"/></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -72,7 +72,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th>صورة البطاقة من الخلف</th>
-                                                    <td>{{$client->client_birthDate}}</td>
+                                                    <td><img src="{{asset('storage')}}/clients/NidPics/{{$client->client_idPicBack}}" width="200px" height="100px"/></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
