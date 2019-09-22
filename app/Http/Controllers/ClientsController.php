@@ -39,6 +39,7 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
+
         $client= new Client();
         $client->client_name =Request('client_name');
         $client->client_nid =Request('client_nid');

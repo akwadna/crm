@@ -85,6 +85,7 @@ $(document).ready(function() {
 
 });
 
+
 $(document).on('click', '.navbar-toggler', function() {
   $toggle = $(this);
 

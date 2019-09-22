@@ -23,14 +23,16 @@
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="client_name" class="form-control" placeholder="الاسم">
+                                            <label for="client_name" class="bmd-label-floating">الاسم</label>
+                                            <input type="text" name="client_name" class="form-control" id="client_name">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="client_nid" class="form-control" placeholder="الرقم القومى" maxlength="16" minlength="16">
+                                        <label for="client_nid" class="bmd-label-floating">الرقم القومى</label>
+                                        <input type="number" name="client_nid" class="form-control" id="client_nid">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <select id="inputState" name="client_type" class="form-control">
-                                            <option selected >نوع العميل</option>
+                                        <select class="form-control" name="client_type" id="client_type">
+                                            <option value="نوع العميل غير محدد" selected>اختر نوع العميل</option>
                                             <option value="عميل عادى">عميل عادى</option>
                                             <option value="تاجر">تاجر</option>
                                             <option value="مورد">مورد</option>
@@ -38,40 +40,57 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="client_job" class="form-control" placeholder="وظيفة العميل">
+                                        <label for="client_job" class="bmd-label-floating">وظيفة العميل</label>
+                                        <input type="text" name="client_job" class="form-control" id="client_job">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="client_phone" class="form-control" placeholder="رقم التليفون">
+                                        <label for="client_phone" class="bmd-label-floating">رقم التليفون</label>
+                                        <input type="text" name="client_phone" class="form-control" id="client_phone">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="email" name="client_email" class="form-control" placeholder="البريد الالكترونى">
+                                        <label for="client_email" class="bmd-label-floating">البريد الالكترونى</label>
+                                        <input type="email" name="client_email" class="form-control" id="client_email">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="date" name="client_birthDate" class="form-control" placeholder="تاريخ الميلاد">
+                                        <input type="date" name="client_birthDate" class="form-control" id="client_birthDate">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="client_bankAccountNumber" class="form-control" placeholder="رقم الحساب البنكى">
+                                        <label for="client_bankAccountNumber" class="bmd-label-floating">رقم الحساب البنكى</label>
+                                        <input type="text" name="client_bankAccountNumber" class="form-control"id="client_bankAccountNumber">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <div class="fileinput fileinput-new text-center" data-provides="fileinput" style="width: 478px;">
-                                            <div class="fileinput-new thumbnail img-raised" style="width: 478px;">0
-                                                <img src="" alt="صورة البطاقة من الخلف" style="width: 478px;">
+                                        <div class="form-group form-file-upload form-file-multiple">
+                                            <input type="file" multiple="" class="inputFileHidden" name="client_idPicFront">
+                                            <div class="input-group">
+                                                <input type="text"  class="form-control inputFileVisible" placeholder="صورة البطاقة من الامام">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-fab btn-round btn-primary">
+                                                        <i class="material-icons">attach_file</i>
+                                                    </button>
+                                                </span>
                                             </div>
-                                            <div class="fileinput-preview fileinput-exists thumbnail img-raised" style="width: 478px;"></div>
-                                            <div>
-                                         <span class="btn btn-raised btn-round btn-default btn-file">
-                                             <span class="fileinput-new">Select image</span>
-                                             <input type="file" name="client_idPicBack" placeholder="صورة البطاقة من الخلف"/>
-                                          </span>
-                                                <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="form-group form-file-upload form-file-multiple">
+                                            <input type="file" multiple="" class="inputFileHidden" name="client_idPicBack">
+                                            <div class="input-group">
+                                                <input type="text"  class="form-control inputFileVisible" placeholder="صورة البطاقة من الخلف">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-fab btn-round btn-primary">
+                                                        <i class="material-icons">attach_file</i>
+                                                    </button>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <textarea class="form-control" name="client_address" placeholder="العنوان كاملا"></textarea>
+                                        <label for="client_address" class="bmd-label-floating">العنوان كامل</label>
+                                        <textarea class="form-control" name="client_address" id="client_address"></textarea>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <textarea class="form-control" name="client_notes" placeholder="ملاحظات"></textarea>
+                                        <label for="client_notes" class="bmd-label-floating">ملاحظات</label>
+                                        <textarea class="form-control" name="client_notes" id="client_notes"></textarea>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <button type="submit" class="btn btn-primary">حفظ</button>

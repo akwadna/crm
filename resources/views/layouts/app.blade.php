@@ -37,6 +37,10 @@
                 font-family: "Cairo";
             }
     </style>
+        <link rel="stylesheet" href="{{asset('css')}}/docsearch.min.css" />
+        <!-- CSS Just for demo purpose, don't include it in your project -->
+        <link href="{{asset('demo')}}/demo.css" rel="stylesheet" />
+        <link href="{{asset('demo')}}/vertical-nav.css" rel="stylesheet" />
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -54,6 +58,8 @@
         <script src="{{ asset('material') }}/js/core/popper.min.js"></script>
         <script src="{{ asset('material') }}/js/core/bootstrap-material-design.min.js"></script>
         <script src="{{ asset('material') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="{{asset('js')}}/buttons.js"></script>
         <!-- Plugin for the momentJs  -->
         <script src="{{ asset('material') }}/js/plugins/moment.min.js"></script>
         <!--  Plugin for Sweet Alert -->
@@ -70,20 +76,26 @@
         <script src="{{ asset('material') }}/js/plugins/jquery.dataTables.min.js"></script>
         <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
         <script src="{{ asset('material') }}/js/plugins/bootstrap-tagsinput.js"></script>
-        <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-        <script src="{{ asset('material') }}/js/plugins/jasny-bootstrap.min.js"></script>
+        <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+        <script src="{{asset('js')}}/plugins/jasny-bootstrap.min.js" type="text/javascript"></script>
         <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
         <script src="{{ asset('material') }}/js/plugins/fullcalendar.min.js"></script>
+        <!--	Plugin for Small Gallery in Product Page -->
+        <script src="{{asset('js')}}/plugins/jquery.flexisel.js" type="text/javascript"></script>
+        <!-- Plugins for presentation and navigation  -->
+        <script src="{{asset('demo')}}/modernizr.js" type="text/javascript"></script>
+        <script src="{{asset('demo')}}/vertical-nav.js" type="text/javascript"></script>
         <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
         <script src="{{ asset('material') }}/js/plugins/jquery-jvectormap.js"></script>
+        <!--	Plugin for Sharrre btn -->
+        <script src="{{asset('js')}}/plugins/jquery.sharrre.js" type="text/javascript"></script>
         <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
         <script src="{{ asset('material') }}/js/plugins/nouislider.min.js"></script>
         <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
         <script src="{{ asset('material') }}/js/core/core.js"></script>
         <!-- Library for adding dinamically elements -->
         <script src="{{ asset('material') }}/js/plugins/arrive.min.js"></script>
-        <!--  Google Maps Plugin    -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE'"></script>
+        <script src="{{asset('js')}}/material-kit.min1036.js?v=2.1.1" type="text/javascript"></script>
         <!-- Chartist JS -->
         <script src="{{ asset('material') }}/js/plugins/chartist.min.js"></script>
         <!--  Notifications Plugin    -->
@@ -96,6 +108,15 @@
         @stack('js')
         <script>
             $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+        </script>
+        <script>
+            $(document).ready(function() {
+                //init DateTimePickers
+                materialKit.initFormExtendedDatetimepickers();
+
+                // Sliders Init
+                materialKit.initSliders();
+            });
         </script>
     </body>
 </html>
