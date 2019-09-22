@@ -12,7 +12,7 @@
                                 </div>
                                 <div class="col-md-3 text-center align-self-center">
                                     <form method="get" action="/clients">
-                                        <button class="btn btn-success"><i class="material-icons mdc-button__icon">add_circle_outline</i>العودة لكل العملاء<div class="ripple-container"></div></button>
+                                        <button class="btn btn-success"><i class="material-icons mdc-button__icon">keyboard_arrow_right</i>العودة لكل العملاء<div class="ripple-container"></div></button>
                                     </form>
                                 </div>
 

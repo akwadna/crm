@@ -8,13 +8,18 @@
                         <div class="card-header card-header-primary">
 
                             <div class="row">
-                                <div class="col-md-9 align-self-center">
+                                <div class="col-md-6 align-self-center">
                                     <h4 class="card-title ">بيانات العميل: {{$client->client_name}}</h4>
                                     <div class="card-category">الموظف المسؤل: {{$user->name}}</div>
                                 </div>
+                                <div class="col-md-3 text-left">
+                                    <form method="get" action="/clients/{{$client->id}}/edit">
+                                        <button class="btn btn-warning "><i class="material-icons mdc-button__icon">edit</i>تعديل</button>
+                                    </form>
+                                </div>
                                 <div class="col-md-3 text-center align-self-center">
                                     <form method="get" action="/clients">
-                                        <button class="btn btn-success"><i class="material-icons mdc-button__icon">add_circle_outline</i>العودة لكل العملاء<div class="ripple-container"></div></button>
+                                        <button class="btn btn-success"><i class="material-icons mdc-button__icon">keyboard_arrow_right</i>العودة لكل العملاء<div class="ripple-container"></div></button>
                                     </form>
                                 </div>
 
@@ -29,8 +34,8 @@
                                             <table class="table">
                                                 <tbody>
                                                 <tr>
-                                                    <th>الرقم القومى</th>
-                                                    <td>{{$client->client_nid}}</td>
+                                                    <th>الاسم</th>
+                                                    <td>{{$client->client_name}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>الوظيفة</th>
@@ -55,8 +60,8 @@
                                             <table class="table">
                                                 <tbody>
                                                 <tr>
-                                                    <th>الاسم</th>
-                                                    <td>{{$client->client_name}}</td>
+                                                    <th>الرقم القومى</th>
+                                                    <td>{{$client->client_nid}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>رقم التليفون</th>
