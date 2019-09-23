@@ -31,7 +31,8 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <select id="inputState" name="client_type" class="form-control">
-                                            <option {{ ($client->client_type == 'عميل عادى') ? 'selected' : '' }}>مؤسسة</option>
+                                            <option {{ ($client->client_type == 'نوع العميل غير محدد') ? 'selected' : '' }}>اختر نوع العميل</option>
+                                            <option {{ ($client->client_type == 'عميل عادى') ? 'selected' : '' }}>عميل عادى</option>
                                             <option {{ ($client->client_type == 'تاجر') ? 'selected' : '' }}>تاجر</option>
                                             <option {{ ($client->client_type == 'مورد') ? 'selected' : '' }}>مورد</option>
                                             <option {{ ($client->client_type == 'مؤسسة') ? 'selected' : '' }}>مؤسسة</option>

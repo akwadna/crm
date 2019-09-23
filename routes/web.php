@@ -21,10 +21,13 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::group(['middleware' => 'auth'], function () {
     //Start System Routs
     Route::resource('clients','ClientsController',['names' => ['index' => 'index_clients']]);
-    Route::get('deleted-clients','ClientsController@showdestroied')->name('showdestroied');
-    Route::delete('clients/{id}/delete','ClientsController@predestroy')->name('predestroy');
-    Route::get('clients/{id}/restore','ClientsController@restore_client')->name('restorclient');;
+    Route::get('deleted-clients','ClientsController@showdestroied')->name('showdestroiedclients');
+    Route::delete('clients/{id}/delete','ClientsController@predestroy')->name('predestroyclients');
+    Route::get('clients/{id}/restore','ClientsController@restore')->name('restorclient');;
     Route::resource('companies','CompaniesController',['names' => ['index' => 'companies']]);
+    Route::get('deleted-companies','CompaniesController@showdestroied')->name('showdestroiedcompanies');
+    Route::delete('companies/{id}/delete','CompaniesController@predestroy')->name('predestroycompanies');
+    Route::get('companies/{id}/restore','CompaniesController@restore')->name('restorcompany');;
     Route::resource('vendors','VendorsController',['names' => ['index' => 'vendors']]);
     Route::resource('moneymakers','MoneyMakersController',['names' => ['index' => 'moneymakers']]);
     Route::resource('moneymakersprocesses','MoneyMakersProcessesController',['names' => ['index' => 'moneymakersprocesses']]);

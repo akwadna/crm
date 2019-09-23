@@ -27,7 +27,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        return view('system.lead.clients.create_client', compact('clients'));
+        return view('system.lead.clients.create_client');
 
     }
 
@@ -195,15 +195,13 @@ class ClientsController extends Controller
     }
     public function predestroy($id)
     {
-
         $client=Client::findOrFail($id);
-        //dd($client->client_name);
         $client->delete_status=0;
         $client->save();
         session()->flash('warning', 'تمت عملية حذف العميل مؤقتا بنجاح');
         return redirect('clients');
     }
-    public function restore_client($id){
+    public function restore($id){
         $client=Client::findOrFail($id);
         $client->delete_status=1;
         $client->save();
