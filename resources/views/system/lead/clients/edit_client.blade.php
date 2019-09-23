@@ -27,7 +27,7 @@
                                         <input type="text" name="client_name" class="form-control" value="{{$client->client_name}}">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="client_nid" class="form-control" value="{{$client->client_nid}}" maxlength="16" minlength="16">
+                                        <input type="text" name="client_nid" class="form-control" value="{{$client->client_nid}}" maxlength="14" minlength="14">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <select id="inputState" name="client_type" class="form-control">

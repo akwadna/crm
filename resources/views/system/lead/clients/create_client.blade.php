@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="client_nid" class="bmd-label-floating">الرقم القومى</label>
-                                        <input type="number" name="client_nid" class="form-control" id="client_nid">
+                                        <input type="number" name="client_nid" class="form-control" maxlength="14" id="client_nid">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <select class="form-control" name="client_type" id="client_type">

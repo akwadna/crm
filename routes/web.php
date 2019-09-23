@@ -29,6 +29,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('companies/{id}/delete','CompaniesController@predestroy')->name('predestroycompanies');
     Route::get('companies/{id}/restore','CompaniesController@restore')->name('restorcompany');;
     Route::resource('vendors','VendorsController',['names' => ['index' => 'vendors']]);
+    Route::get('deleted-vendors','VendorsController@showdestroied')->name('showdestroiedvendors');
+    Route::delete('vendors/{id}/delete','VendorsController@predestroy')->name('predestroyvendors');
+    Route::get('vendors/{id}/restore','VendorsController@restore')->name('restorvendor');;
     Route::resource('moneymakers','MoneyMakersController',['names' => ['index' => 'moneymakers']]);
     Route::resource('moneymakersprocesses','MoneyMakersProcessesController',['names' => ['index' => 'moneymakersprocesses']]);
     Route::resource('producttypes','ProductTypesController',['names' => ['index' => 'producttypes']]);
