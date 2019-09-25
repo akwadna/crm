@@ -29,7 +29,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <select class="form-control" name="company_status" id="company_status">
-                                            <option {{ ($company->company_status == 'نوع العميل غير محدد') ? 'selected' : '' }}>حالة المؤسسة</option>
+                                            <option {{ ($company->company_status == 'حالة المؤسسة غير محددة') ? 'selected' : '' }}>حالة المؤسسة</option>
                                             <option {{ ($company->company_status == 'تعمل حاليا') ? 'selected' : '' }}>تعمل حاليا</option>
                                             <option {{ ($company->company_status == 'لا تعمل حاليا') ? 'selected' : '' }}>لا تعمل حاليا</option>
                                         </select>

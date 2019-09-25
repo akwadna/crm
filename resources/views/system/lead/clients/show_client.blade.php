@@ -34,11 +34,11 @@
                                             <table class="table">
                                                 <tbody>
                                                 <tr>
-                                                    <th>الاسم</th>
+                                                    <th>اسم العميل</th>
                                                     <td>{{$client->client_name}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>الوظيفة</th>
+                                                    <th>وظيفة العميل</th>
                                                     <td>{{$client->client_job}}</td>
                                                 </tr>
                                                 <tr>

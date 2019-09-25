@@ -23,11 +23,11 @@
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                            <label for="client_name" class="bmd-label-floating">الاسم</label>
+                                            <label for="client_name" class="bmd-label" style="top:-10px;">الاسم</label>
                                             <input type="text" name="client_name" class="form-control" id="client_name">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="client_nid" class="bmd-label-floating">الرقم القومى</label>
+                                        <label for="client_nid" class="bmd-label" style="top:-10px;">الرقم القومى</label>
                                         <input type="number" name="client_nid" class="form-control" maxlength="14" id="client_nid">
                                     </div>
                                     <div class="form-group col-md-6">
@@ -40,22 +40,23 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="client_job" class="bmd-label-floating">وظيفة العميل</label>
+                                        <label for="client_job" class="bmd-label" style="top:-10px;">وظيفة العميل</label>
                                         <input type="text" name="client_job" class="form-control" id="client_job">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="client_phone" class="bmd-label-floating">رقم التليفون</label>
+                                        <label for="client_phone" class="bmd-label" style="top:-10px;">رقم التليفون</label>
                                         <input type="text" name="client_phone" class="form-control" id="client_phone">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="client_email" class="bmd-label-floating">البريد الالكترونى</label>
+                                        <label for="client_email" class="bmd-label" style="top:-10px;">البريد الالكترونى</label>
                                         <input type="email" name="client_email" class="form-control" id="client_email">
                                     </div>
                                     <div class="form-group col-md-6">
+                                        <label for="client_birthDate" class="bmd-label" style="top:-10px;">تاريخ الميلاد</label>
                                         <input type="date" name="client_birthDate" class="form-control" id="client_birthDate">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="client_bankAccountNumber" class="bmd-label-floating">رقم الحساب البنكى</label>
+                                        <label for="client_bankAccountNumber" class="bmd-label" style="top:-10px;">رقم الحساب البنكى</label>
                                         <input type="text" name="client_bankAccountNumber" class="form-control"id="client_bankAccountNumber">
                                     </div>
                                     <div class="form-group col-md-6">
@@ -85,11 +86,11 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="client_address" class="bmd-label-floating">العنوان كامل</label>
+                                        <label for="client_address" class="bmd-label" style="top:-10px;">العنوان كامل</label>
                                         <textarea class="form-control" name="client_address" id="client_address"></textarea>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="client_notes" class="bmd-label-floating">ملاحظات</label>
+                                        <label for="client_notes" class="bmd-label" style="top:-10px;">ملاحظات</label>
                                         <textarea class="form-control" name="client_notes" id="client_notes"></textarea>
                                     </div>
                                     <div class="form-group col-md-12">

@@ -23,11 +23,11 @@
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="vendor_name" class="bmd-label-floating">الاسم</label>
+                                        <label for="vendor_name" class="bmd-label" style="top:-10px;">الاسم</label>
                                         <input type="text" name="vendor_name" class="form-control" id="vendor_name">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="vendor_nid" class="bmd-label-floating">الرقم القومى</label>
+                                        <label for="vendor_nid" class="bmd-label" style="top:-10px;">الرقم القومى</label>
                                         <input type="number" name="vendor_nid" class="form-control" maxlength="14" id="vendor_nid">
                                     </div>
                                     <div class="form-group col-md-6">
@@ -40,26 +40,27 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="vendor_phone" class="bmd-label-floating">رقم التليفون</label>
+                                        <label for="vendor_phone" class="bmd-label" style="top:-10px;">رقم التليفون</label>
                                         <input type="text" name="vendor_phone" class="form-control" id="vendor_phone">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="vendor_email" class="bmd-label-floating">البريد الالكترونى</label>
+                                        <label for="vendor_email" class="bmd-label" style="top:-10px;">البريد الالكترونى</label>
                                         <input type="email" name="vendor_email" class="form-control" id="vendor_email">
                                     </div>
                                     <div class="form-group col-md-6">
+                                        <label for="vendor_birthDate" class="bmd-label" style="top:-10px;">تاريخ الميلاد</label>
                                         <input type="date" name="vendor_birthDate" class="form-control" id="vendor_birthDate">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="vendor_bankAccountNumber" class="bmd-label-floating">رقم الحساب البنكى</label>
+                                        <label for="vendor_bankAccountNumber" class="bmd-label" style="top:-10px;">رقم الحساب البنكى</label>
                                         <input type="text" name="vendor_bankAccountNumber" class="form-control"id="vendor_bankAccountNumber">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="vendor_address" class="bmd-label-floating">العنوان كاملا</label>
+                                        <label for="vendor_address" class="bmd-label" style="top:-10px;">العنوان كاملا</label>
                                         <textarea class="form-control" name="vendor_address" id="vendor_address"></textarea>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="vendor_notes" class="bmd-label-floating">ملاحظات</label>
+                                        <label for="vendor_notes" class="bmd-label" style="top:-10px;">ملاحظات</label>
                                         <textarea class="form-control" name="vendor_notes" id="vendor_notes"></textarea>
                                     </div>
                                     <div class="form-group col-md-12">

@@ -137,4 +137,5 @@ class VendorsController extends Controller
         $vendor->delete();
         session()->flash('error', 'تمت عملية حذف العميل نهائيا بنجاح ولن يمكنك استعادته مرة اخرى');
         return redirect('deleted-vendors');
-    }}
+    }
+}

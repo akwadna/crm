@@ -24,10 +24,12 @@
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="client_name" class="form-control" value="{{$client->client_name}}">
+                                        <label for="client_name" class="bmd-label" style="top:-10px;">الاسم</label>
+                                        <input type="text" name="client_name" id="client_name" class="form-control" value="{{$client->client_name}}">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="client_nid" class="form-control" value="{{$client->client_nid}}" maxlength="14" minlength="14">
+                                        <label for="client_nid" class="bmd-label" style="top:-10px;">الرقم القومى</label>
+                                        <input type="text" name="client_nid" id="client_nid" class="form-control" value="{{$client->client_nid}}" maxlength="14" minlength="14">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <select id="inputState" name="client_type" class="form-control">
@@ -39,19 +41,24 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="client_job" class="form-control" value="{{$client->client_job}}">
+                                        <label for="client_job" class="bmd-label" style="top:-10px;">وظيفة العميل</label>
+                                        <input type="text" name="client_job" id="client_job" class="form-control" value="{{$client->client_job}}">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="client_phone" class="form-control" value="{{$client->client_phone}}">
+                                        <label for="client_phone" class="bmd-label" style="top:-10px;">رقم التليفون</label>
+                                        <input type="text" name="client_phone" id="client_phone" class="form-control" value="{{$client->client_phone}}">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="email" name="client_email" class="form-control" value="{{$client->client_email}}">
+                                        <label for="client_email" class="bmd-label" style="top:-10px;">البريد الالكترونى</label>
+                                        <input type="email" name="client_email" id="client_email" class="form-control" value="{{$client->client_email}}">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="date" name="client_birthDate" class="form-control" value="{{$client->client_birthDate}}">
+                                        <label for="client_birthDate" class="bmd-label" style="top:-10px;">تاريخ الميلاد</label>
+                                        <input type="date" name="client_birthDate" id="client_birthDate" class="form-control" value="{{$client->client_birthDate}}">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="client_bankAccountNumber" class="form-control" value="{{$client->client_bankAccountNumber}}">
+                                        <label for="client_bankAccountNumber" class="bmd-label" style="top:-10px;">رقم الحساب البنكى</label>
+                                        <input type="text" name="client_bankAccountNumber" id="client_bankAccountNumber" class="form-control" value="{{$client->client_bankAccountNumber}}">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div><img src="{{asset('storage')}}/clients/NidPics/{{$client->client_idPicFront}}" width="460px" height="200px"/></div>
@@ -83,10 +90,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <textarea class="form-control" name="client_address">{{$client->client_address}}</textarea>
+                                        <label for="client_address" class="bmd-label" style="top:-10px;">العنوان كامل</label>
+                                        <textarea class="form-control" id="client_address" name="client_address">{{$client->client_address}}</textarea>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <textarea class="form-control" name="client_notes">{{$client->client_notes}}</textarea>
+                                        <label for="client_notes" class="bmd-label" style="top:-10px;">ملاحظات</label>
+                                        <textarea class="form-control" id="client_notes" name="client_notes">{{$client->client_notes}}</textarea>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <button type="submit" class="btn btn-primary">حفظ</button>

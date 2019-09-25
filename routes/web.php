@@ -20,20 +20,32 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
     //Start System Routs
+    //Clients Routs
     Route::resource('clients','ClientsController',['names' => ['index' => 'index_clients']]);
     Route::get('deleted-clients','ClientsController@showdestroied')->name('showdestroiedclients');
     Route::delete('clients/{id}/delete','ClientsController@predestroy')->name('predestroyclients');
     Route::get('clients/{id}/restore','ClientsController@restore')->name('restorclient');;
+    //Companies Routs
     Route::resource('companies','CompaniesController',['names' => ['index' => 'companies']]);
     Route::get('deleted-companies','CompaniesController@showdestroied')->name('showdestroiedcompanies');
     Route::delete('companies/{id}/delete','CompaniesController@predestroy')->name('predestroycompanies');
     Route::get('companies/{id}/restore','CompaniesController@restore')->name('restorcompany');;
+    //Vendors Routs
     Route::resource('vendors','VendorsController',['names' => ['index' => 'vendors']]);
     Route::get('deleted-vendors','VendorsController@showdestroied')->name('showdestroiedvendors');
     Route::delete('vendors/{id}/delete','VendorsController@predestroy')->name('predestroyvendors');
     Route::get('vendors/{id}/restore','VendorsController@restore')->name('restorvendor');;
+    //moneymakers Routs
     Route::resource('moneymakers','MoneyMakersController',['names' => ['index' => 'moneymakers']]);
+    Route::get('deleted-moneymakers','MoneyMakersController@showdestroied')->name('showdestroiedmoneymakers');
+    Route::delete('moneymakers/{id}/delete','MoneyMakersController@predestroy')->name('predestroymoneymakers');
+    Route::get('moneymakers/{id}/restore','MoneyMakersController@restore')->name('restormoneymaker');
+    //moneymakersProcesses Routs
     Route::resource('moneymakersprocesses','MoneyMakersProcessesController',['names' => ['index' => 'moneymakersprocesses']]);
+    Route::get('deleted-moneymakersprocesses','MoneyMakersProcessesController@showdestroied')->name('showdestroiedmoneymakersprocesses');
+    Route::delete('moneymakersprocesses/{id}/delete','MoneyMakersProcessesController@predestroy')->name('predestroymoneymakersprocesses');
+    Route::get('moneymakersprocesses/{id}/restore','MoneyMakersProcessesController@restore')->name('restormoneymaker');
+    //ProductTypes Routs
     Route::resource('producttypes','ProductTypesController',['names' => ['index' => 'producttypes']]);
     Route::resource('brands','BrandsController',['names' => ['index' => 'brands']]);
     Route::resource('products','ProductsController',['names' => ['index' => 'products']]);

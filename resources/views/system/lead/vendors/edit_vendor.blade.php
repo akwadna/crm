@@ -24,10 +24,12 @@
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="vendor_name" class="form-control" value="{{$vendor->vendor_name}}">
+                                        <label for="vendor_name" class="bmd-label" style="top:-10px;">الاسم</label>
+                                        <input type="text" name="vendor_name" id="vendor_name" class="form-control" value="{{$vendor->vendor_name}}">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="vendor_nid" class="form-control" value="{{$vendor->vendor_nid}}" maxlength="14" minlength="14">
+                                        <label for="vendor_nid" class="bmd-label" style="top:-10px;">الرقم القومى</label>
+                                        <input type="text" name="vendor_nid" id="vendor_nid" class="form-control" value="{{$vendor->vendor_nid}}" maxlength="14" minlength="14">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <select id="inputState" name="vendor_type" class="form-control">
@@ -39,22 +41,28 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="vendor_phone" class="form-control" value="{{$vendor->vendor_phone}}">
+                                        <label for="vendor_phone" class="bmd-label" style="top:-10px;">رقم التليفون</label>
+                                        <input type="text" name="vendor_phone" id="vendor_phone" class="form-control" value="{{$vendor->vendor_phone}}">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="email" name="vendor_email" class="form-control" value="{{$vendor->vendor_email}}">
+                                        <label for="vendor_email" class="bmd-label" style="top:-10px;">البريد الالكترونى</label>
+                                        <input type="email" name="vendor_email" id="vendor_email" class="form-control" value="{{$vendor->vendor_email}}">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="date" name="vendor_birthDate" class="form-control" value="{{$vendor->vendor_birthDate}}">
+                                        <label for="vendor_birthDate" class="bmd-label" style="top:-10px;">تاريخ الميلاد</label>
+                                        <input type="date" name="vendor_birthDate" id="vendor_birthDate" class="form-control" value="{{$vendor->vendor_birthDate}}">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="text" name="vendor_bankAccountNumber" class="form-control" value="{{$vendor->vendor_bankAccountNumber}}">
+                                        <label for="vendor_bankAccountNumber" class="bmd-label" style="top:-10px;">رقم الحساب البنكى</label>
+                                        <input type="text" name="vendor_bankAccountNumber" id="vendor_bankAccountNumber" class="form-control" value="{{$vendor->vendor_bankAccountNumber}}">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <textarea class="form-control" name="vendor_address">{{$vendor->vendor_address}}</textarea>
+                                        <label for="vendor_address" class="bmd-label" style="top:-10px;">العنوان كاملا</label>
+                                        <textarea class="form-control" id="vendor_address" name="vendor_address">{{$vendor->vendor_address}}</textarea>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <textarea class="form-control" name="vendor_notes">{{$vendor->vendor_notes}}</textarea>
+                                        <label for="vendor_notes" class="bmd-label" style="top:-10px;">ملاحظات</label>
+                                        <textarea class="form-control" id="vendor_notes" name="vendor_notes">{{$vendor->vendor_notes}}</textarea>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <button type="submit" class="btn btn-primary">حفظ</button>

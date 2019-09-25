@@ -23,22 +23,22 @@
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="company_name" class="bmd-label-floating">اسم المؤسسة</label>
+                                        <label for="company_name" class="bmd-label" style="top:-10px;">اسم المؤسسة</label>
                                         <input type="text" name="company_name" class="form-control" id="company_name">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <select class="form-control" name="company_status" id="company_status">
-                                            <option value="نوع العميل غير محدد" selected>حالة المؤسسة</option>
+                                            <option value="حالة المؤسسة غير محددة" selected>حالة المؤسسة</option>
                                             <option value="تعمل حاليا">تعمل حاليا</option>
                                             <option value="لا تعمل حاليا">لا تعمل حاليا</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="company_phone1" class="bmd-label-floating">رقم الهاتف 1</label>
+                                        <label for="company_phone1" class="bmd-label" style="top:-10px;">رقم الهاتف 1</label>
                                         <input type="number" name="company_phone1" class="form-control" id="company_phone1">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="company_phone2" class="bmd-label-floating">رقم الهاتف 2</label>
+                                        <label for="company_phone2" class="bmd-label" style="top:-10px;">رقم الهاتف 2</label>
                                         <input type="number" name="company_phone2" class="form-control" id="company_phone2">
                                     </div>
                                     <div class="form-group col-md-6">
@@ -50,19 +50,19 @@
                                         <input type="date" name="company_endDate" class="form-control date" id="company_endDate">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="company_email" class="bmd-label-floating">البريد الالكترونى</label>
+                                        <label for="company_email" class="bmd-label" style="top:-10px;">البريد الالكترونى</label>
                                         <input type="email" name="company_email" class="form-control" id="company_email">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="company_inchargeName" class="bmd-label-floating">اسم المسئول</label>
+                                        <label for="company_inchargeName" class="bmd-label" style="top:-10px;">اسم المسئول</label>
                                         <input type="text" name="company_inchargeName" class="form-control" id="company_inchargeName">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="company_inchargePhone" class="bmd-label-floating">رقم تليفون المسئول</label>
+                                        <label for="company_inchargePhone" class="bmd-label" style="top:-10px;">رقم تليفون المسئول</label>
                                         <input type="text" name="company_inchargePhone" class="form-control" id="company_inchargePhone">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="company_inchargeJob" class="bmd-label-floating">وظيفة المسئول</label>
+                                        <label for="company_inchargeJob" class="bmd-label" style="top:-10px;">وظيفة المسئول</label>
                                         <input type="text" name="company_inchargeJob" class="form-control" id="company_inchargeJob">
                                     </div>
                                     <div class="form-group col-md-6">
@@ -92,15 +92,15 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="company_bankAccountNumber" class="bmd-label-floating">رقم الحساب البنكى</label>
+                                        <label for="company_bankAccountNumber" class="bmd-label" style="top:-10px;">رقم الحساب البنكى</label>
                                         <input type="text" name="company_bankAccountNumber" class="form-control" id="company_bankAccountNumber">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="company_address" class="bmd-label-floating">العنوان كاملا</label>
+                                        <label for="company_address" class="bmd-label" style="top:-10px;">العنوان كاملا</label>
                                         <textarea class="form-control" name="company_address" id="company_address"></textarea>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="company_notes" class="bmd-label-floating">ملاحظات</label>
+                                        <label for="company_notes" class="bmd-label" style="top:-10px;">ملاحظات</label>
                                         <textarea class="form-control" name="company_notes" id="company_notes"></textarea>
                                     </div>
                                     <div class="form-group col-md-12">
