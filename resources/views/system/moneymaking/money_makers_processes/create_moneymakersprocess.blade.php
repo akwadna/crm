@@ -2,15 +2,21 @@
 @section('content')
     <script type="text/javascript">
         $(document).ready(function() {
-                $('.clickable').click(function () {
+                $('.moneymaker').click(function () {
                     var moneyMakername=$(this).text();
                     var moneyMakerIdWithHash =$(this).attr("href");
                     var moneyMakerIdWitOuthHash = moneyMakerIdWithHash.split('#').join("");
                     $('#money_maker_id').val(moneyMakerIdWitOuthHash);
                     $('#money_maker_name').val(moneyMakername);
+                    var originalMoney =$(this).attr("name");
+                    $('#money_maker_process_remainPrice_hidden').val(originalMoney);
                     $('#modalLoginForm').modal('hide');
                     //$('#modalLoginForm').dialog('close');
                 });
+            $("#money_maker_process_price").keyup(function(){
+                var yy =$('#money_maker_process_remainPrice_hidden').val();
+                $("#money_maker_process_remainPrice").val(yy-$(this).val());
+            });
         });
     </script>
     <div class="content">
@@ -76,7 +82,7 @@
                                                                                 الرقم القومى
                                                                             </th>
                                                                             <th>
-                                                                                التليفون
+                                                                                المبلغ المدفوع
                                                                             </th>
                                                                             </thead>
                                                                             <tbody>
@@ -87,13 +93,13 @@
                                                                                         {{$money_maker->id}}
                                                                                     </td>
                                                                                     <td class="text-primary">
-                                                                                        <a class="clickable" href="#{{$money_maker->id}}">{{$money_maker->money_maker_name}}</a>
+                                                                                        <a class="moneymaker" name="{{$money_maker->money_maker_mount}}" href="#{{$money_maker->id}}">{{$money_maker->money_maker_name}}</a>
                                                                                     </td>
                                                                                     <td>
                                                                                         {{$money_maker->money_maker_nid}}
                                                                                     </td>
                                                                                     <td>
-                                                                                        {{$money_maker->money_maker_phone}}
+                                                                                        {{$money_maker->money_maker_mount}}
                                                                                     </td>
                                                                                 </tr>
                                                                             @endforeach
@@ -128,7 +134,8 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="money_maker_process_remainPrice" class="bmd-label" style="top:-10px;">المبلغ المتبقى</label>
-                                        <input type="text" name="money_maker_process_remainPrice" class="form-control" id="money_maker_process_remainPrice">
+                                        <input type="hidden" name="money_maker_process_remainPrice_hidden" class="form-control" id="money_maker_process_remainPrice_hidden">
+                                        <input type="text" name="money_maker_process_remainPrice" class="form-control" readonly id="money_maker_process_remainPrice">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <select class="form-control" name="money_maker_process_type" id="money_maker_process_type">
