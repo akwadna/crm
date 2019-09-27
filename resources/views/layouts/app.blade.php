@@ -22,7 +22,8 @@
         <link rel="stylesheet" href="{{ asset('material') }}/fontawesome-free/scss/regular.scss">
         <link rel="stylesheet" href="{{ asset('material') }}/fontawesome-free/scss/fontawesome.scss">
         <link rel="stylesheet" href="{{ asset('css/material-icons.css') }}" />
-    <style>
+        <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
+        <style>
             body,
             h1,
             h2,
@@ -41,6 +42,7 @@
         <!-- CSS Just for demo purpose, don't include it in your project -->
         <link href="{{asset('demo')}}/demo.css" rel="stylesheet" />
         <link href="{{asset('demo')}}/vertical-nav.css" rel="stylesheet" />
+
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -54,7 +56,6 @@
         @endguest
 
         <!--   Core JS Files   -->
-        <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
         <script src="{{ asset('material') }}/js/core/popper.min.js"></script>
         <script src="{{ asset('material') }}/js/core/bootstrap-material-design.min.js"></script>
         <script src="{{ asset('material') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>

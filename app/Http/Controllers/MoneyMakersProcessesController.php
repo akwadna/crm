@@ -27,7 +27,9 @@ class MoneyMakersProcessesController extends Controller
      */
     public function create()
     {
-        return view('system.moneymaking.money_makers_processes.create_moneymakersprocess');
+        $moneymakers=DB::table('money_makers')->where('delete_status',1)->paginate(7);
+
+        return view('system.moneymaking.money_makers_processes.create_moneymakersprocess',compact('moneymakers'));
 
     }
 
