@@ -16,7 +16,8 @@ class MoneyMakersProcessesController extends Controller
     public function index(Request $request)
     {
         $moneymakersprocesses=DB::table('money_maker_processes')->where('delete_status',1)->paginate(7);
-        return view('system.moneymaking.money_makers_processes.index_moneymakersprocesses', compact('moneymakersprocesses'));
+        $moneymakers=DB::table('money_makers')->where('delete_status',1)->paginate(7);
+        return view('system.moneymaking.money_makers_processes.index_moneymakersprocesses', compact('moneymakersprocesses','moneymakers'));
 
     }
 
@@ -42,7 +43,9 @@ class MoneyMakersProcessesController extends Controller
     public function store(Request $request)
     {
         $money_maker_process= new moneyMakerProcess();
+
         $money_maker_process->money_maker_process_name =Request('money_maker_process_name');
+        $money_maker_process->money_maker_id =Request('money_maker_id');
         $money_maker_process->money_maker_process_type =Request('money_maker_process_type');
         $money_maker_process->money_maker_process_status =Request('money_maker_process_status');
         $money_maker_process->money_maker_process_price =Request('money_maker_process_price');
@@ -51,7 +54,7 @@ class MoneyMakersProcessesController extends Controller
         $money_maker_process->money_maker_process_notes =Request('money_maker_process_notes');
         $money_maker_process->user_id=auth()->user()->id;
         $money_maker_process->save();
-        session()->flash('success', 'تمت عملية اضافة العميل بنجاح');
+        session()->flash('success', 'تمت عملية اضافة عملية المرابحة بنجاح');
         return redirect('moneymakersprocesses');
     }
 

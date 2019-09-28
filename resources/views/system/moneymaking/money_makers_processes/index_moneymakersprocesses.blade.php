@@ -37,7 +37,7 @@
 
                             <div class="col-md-3 text-center align-self-center">
                                 <form method="get" action="moneymakersprocesses/create">
-                                    <button class="btn btn-success"><i class="material-icons mdc-button__icon">add_circle_outline</i>أضف مورد<div class="ripple-container"></div></button>
+                                    <button class="btn btn-success"><i class="material-icons mdc-button__icon">add_circle_outline</i>أضف عملية مرابحة<div class="ripple-container"></div></button>
                                 </form>
                             </div>
 
@@ -82,16 +82,19 @@
                                                 <a href="/moneymakersprocesses/{{$money_maker_process->id}}">{{$money_maker_process->money_maker_process_name}}</a>
                                             </td>
                                             <td>
-                                                {{$money_maker_process->money_maker_process_address}}
+                                                @php
+                                                    $x=$money_maker_process->money_maker_id;
+                                                   echo $moneymakers[$x-1]->money_maker_name;
+                                                @endphp
                                             </td>
                                             <td>
-                                                {{$money_maker_process->money_maker_process_phone}}
+                                                {{$money_maker_process->money_maker_process_type}}
                                             </td>
                                             <td>
-                                                {{$money_maker_process->money_maker_process_phone}}
+                                                {{$money_maker_process->money_maker_process_price}}
                                             </td>
                                             <td>
-                                                {{$money_maker_process->money_maker_process_phone}}
+                                                {{$money_maker_process->money_maker_process_remainPrice}}
                                             </td>
                                             <td>
                                                 <form method="get" action="/moneymakersprocesses/{{$money_maker_process->id}}/edit" style="float:right;">

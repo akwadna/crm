@@ -13,9 +13,22 @@
                     $('#modalLoginForm').modal('hide');
                     //$('#modalLoginForm').dialog('close');
                 });
-            $("#money_maker_process_price").keyup(function(){
-                var yy =$('#money_maker_process_remainPrice_hidden').val();
-                $("#money_maker_process_remainPrice").val(yy-$(this).val());
+            $("select.money_maker_process_type").change(function(){
+                var selectedprocess_type = $(this).children("option:selected").val();
+                $("#money_maker_process_price").keyup(function(){
+                    var withdraw_type =$('#money_maker_process_remainPrice_hidden').val();
+                    var addtion =parseInt(withdraw_type)+parseInt($(this).val());
+                var withdraw =withdraw_type-$(this).val();
+                if(selectedprocess_type == 'سحب'){
+                    $("#money_maker_process_remainPrice").val(withdraw);
+                   }
+                    else if(selectedprocess_type == 'توريد'){
+                        $("#money_maker_process_remainPrice").val(addtion);
+                    }
+                else{alert('لم يتم اختيار نوع عملية المرابحة')}
+
+
+            });
             });
         });
     </script>
@@ -27,23 +40,37 @@
                         <div class="card-header card-header-primary">
                             <div class="row">
                                 <div class="col-md-9 align-self-center">
-                                    <h4 class="card-title ">اضافة بيانات مورد جديد</h4>
+                                    <h4 class="card-title ">اضافة بيانات عملية مرابحة</h4>
                                 </div>
                                 <div class="col-md-3 text-center align-self-center">
                                     <form method="get" action="/vendors">
-                                        <button class="btn btn-success"><i class="material-icons mdc-button__icon">keyboard_arrow_right</i>العودة لكل الموردين<div class="ripple-container"></div></button>
+                                        <button class="btn btn-success"><i class="material-icons mdc-button__icon">keyboard_arrow_right</i>العودة لكل عمليات المرابحة<div class="ripple-container"></div></button>
                                     </form>
                                 </div>
 
                             </div>
                         </div>
                         <div class="card-body">
-                            <form method="post" action="/vendors" enctype="multipart/form-data">
+                            <form method="post" action="/moneymakersprocesses">
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="money_maker_process_name" class="bmd-label" style="top:-10px;">اسم عملية المرابحة</label>
                                         <input type="text" name="money_maker_process_name" class="form-control" id="money_maker_process_name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <select class="form-control money_maker_process_type" name="money_maker_process_type" id="money_maker_process_type">
+                                            <option value="نوع العملية غير محدد" selected>اختر نوع العملية</option>
+                                            <option id="money_maker_process_type_withdraw"value="سحب">سحب</option>
+                                            <option value="توريد">توريد</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <select class="form-control" name="money_maker_process_status" id="money_maker_process_status">
+                                            <option value="حالة العملية غير محدد" selected>اختر حالة العملية</option>
+                                            <option value="سارية">سارية</option>
+                                            <option value="موقوفة">موقوفة</option>
+                                        </select>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="row">
@@ -137,23 +164,10 @@
                                         <input type="hidden" name="money_maker_process_remainPrice_hidden" class="form-control" id="money_maker_process_remainPrice_hidden">
                                         <input type="text" name="money_maker_process_remainPrice" class="form-control" readonly id="money_maker_process_remainPrice">
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <select class="form-control" name="money_maker_process_type" id="money_maker_process_type">
-                                            <option value="نوع العملية غير محدد" selected>اختر نوع العملية</option>
-                                            <option value="سحب">سحب</option>
-                                            <option value="توريد">توريد</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <select class="form-control" name="money_maker_process_status" id="money_maker_process_status">
-                                            <option value="حالة العملية غير محدد" selected>اختر حالة العملية</option>
-                                            <option value="سارية">سارية</option>
-                                            <option value="موقوفة">موقوفة</option>
-                                        </select>
-                                    </div>
+
                                     <div class="form-group col-md-12">
-                                        <label for="vendor_notes" class="bmd-label" style="top:-10px;">ملاحظات</label>
-                                        <textarea class="form-control" name="vendor_notes" id="vendor_notes"></textarea>
+                                        <label for="money_maker_process_notes" class="bmd-label" style="top:-10px;">ملاحظات</label>
+                                        <textarea class="form-control" name="money_maker_process_notes" id="money_maker_process_notes"></textarea>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <button type="submit" class="btn btn-primary">حفظ</button>
