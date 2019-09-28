@@ -29,8 +29,10 @@ class MoneyMakersProcessesController extends Controller
     public function create()
     {
         $moneymakers=DB::table('money_makers')->where('delete_status',1)->paginate(7);
-
-        return view('system.moneymaking.money_makers_processes.create_moneymakersprocess',compact('moneymakers'));
+        //$user = User::where('email', '=', Input::get('email'))->first();
+        $moneyMakerLast=moneyMakerProcess::all()->last();
+        //dd($moneyMakerLast);
+        return view('system.moneymaking.money_makers_processes.create_moneymakersprocess',compact('moneymakers','moneyMakerLast'));
 
     }
 
@@ -43,7 +45,6 @@ class MoneyMakersProcessesController extends Controller
     public function store(Request $request)
     {
         $money_maker_process= new moneyMakerProcess();
-
         $money_maker_process->money_maker_process_name =Request('money_maker_process_name');
         $money_maker_process->money_maker_id =Request('money_maker_id');
         $money_maker_process->money_maker_process_type =Request('money_maker_process_type');
@@ -81,7 +82,8 @@ class MoneyMakersProcessesController extends Controller
     public function edit($id)
     {
         $money_maker_process=moneyMakerProcess::findOrFail($id);
-        return view('system.moneymaking.money_makers_processes.edit_moneymakersprocess',compact('money_maker_process'));
+        $moneymakers=DB::table('money_makers')->where('delete_status',1)->paginate(7);
+        return view('system.moneymaking.money_makers_processes.edit_moneymakersprocess',compact('money_maker_process','moneymakers'));
     }
 
     /**
@@ -95,6 +97,7 @@ class MoneyMakersProcessesController extends Controller
     {
         $money_maker_process=moneyMakerProcess::findOrFail($id);
         $money_maker_process->money_maker_process_name =Request('money_maker_process_name');
+        $money_maker_process->money_maker_id =Request('money_maker_id');
         $money_maker_process->money_maker_process_type =Request('money_maker_process_type');
         $money_maker_process->money_maker_process_status =Request('money_maker_process_status');
         $money_maker_process->money_maker_process_price =Request('money_maker_process_price');
@@ -115,7 +118,8 @@ class MoneyMakersProcessesController extends Controller
      */
     public function showdestroied(){
         $moneymakersprocesses=DB::table('money_maker_processes')->where('delete_status',0)->paginate(7);
-        return view('system.moneymaking.money_makers_processes.deleted_moneymakersprocesses', compact('moneymakersprocesses'));
+        $moneymakers=DB::table('money_makers')->where('delete_status',1)->paginate(7);
+        return view('system.moneymaking.money_makers_processes.deleted_moneymakersprocesses', compact('moneymakersprocesses','moneymakers'));
     }
     public function predestroy($id)
     {

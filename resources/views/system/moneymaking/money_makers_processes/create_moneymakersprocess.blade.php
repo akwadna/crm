@@ -27,8 +27,6 @@
                     $("#money_maker_process_remainPrice").val(addtion);
                     }
                 else{alert('لم يتم اختيار نوع عملية المرابحة')}
-
-
             });
             });
         });
@@ -44,7 +42,7 @@
                                     <h4 class="card-title ">اضافة بيانات عملية مرابحة</h4>
                                 </div>
                                 <div class="col-md-3 text-center align-self-center">
-                                    <form method="get" action="/vendors">
+                                    <form method="get" action="/moneymakersprocesses">
                                         <button class="btn btn-success"><i class="material-icons mdc-button__icon">keyboard_arrow_right</i>العودة لكل عمليات المرابحة<div class="ripple-container"></div></button>
                                     </form>
                                 </div>
@@ -121,7 +119,8 @@
                                                                                         {{$money_maker->id}}
                                                                                     </td>
                                                                                     <td class="text-primary">
-                                                                                        <a class="moneymaker" name="{{$money_maker->money_maker_mount}}" href="#{{$money_maker->id}}">{{$money_maker->money_maker_name}}</a>
+
+                                                                                        <a class="moneymaker" name="{{($money_maker->id == $moneyMakerLast->money_maker_id) ? $moneyMakerLast->money_maker_process_remainPrice:$money_maker->money_maker_mount}}" href="#{{$money_maker->id}}">{{$money_maker->money_maker_name}}</a>
                                                                                     </td>
                                                                                     <td>
                                                                                         {{$money_maker->money_maker_nid}}
