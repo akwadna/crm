@@ -14,6 +14,7 @@
                     //$('#modalLoginForm').dialog('close');
                 });
             $("select.money_maker_process_type").change(function(){
+                $('#money_maker_process_price').val('');
                 var selectedprocess_type = $(this).children("option:selected").val();
                 $("#money_maker_process_price").keyup(function(){
                     var withdraw_type =$('#money_maker_process_remainPrice_hidden').val();
@@ -23,7 +24,7 @@
                     $("#money_maker_process_remainPrice").val(withdraw);
                    }
                     else if(selectedprocess_type == 'توريد'){
-                        $("#money_maker_process_remainPrice").val(addtion);
+                    $("#money_maker_process_remainPrice").val(addtion);
                     }
                 else{alert('لم يتم اختيار نوع عملية المرابحة')}
 
